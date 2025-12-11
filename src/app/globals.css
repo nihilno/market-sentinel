@@ -159,16 +159,16 @@
     @apply flex items-center justify-between px-6 py-4 text-gray-500;
   }
   .auth-layout {
-    @apply relative flex h-screen flex-col justify-between overflow-hidden bg-gray-900 lg:flex-row;
+    @apply relative flex h-dvh flex-col justify-between overflow-hidden bg-gray-900 lg:flex-row;
   }
   .auth-logo {
     @apply mb-8 pt-6 lg:mb-12 lg:pt-8;
   }
   .auth-left-section {
-    @apply flex w-full flex-col overflow-y-auto px-6 lg:h-screen lg:w-[45%] lg:px-16;
+    @apply flex w-full flex-col overflow-y-auto px-6 lg:h-dvh lg:w-[45%] lg:px-16;
   }
   .auth-right-section {
-    @apply flex w-full flex-col justify-start bg-gray-800 px-6 py-4 max-lg:border-t max-lg:border-gray-600 md:p-6 lg:h-screen lg:w-[55%] lg:px-18 lg:py-12;
+    @apply flex w-full flex-col justify-start bg-gray-800 px-6 py-4 max-lg:border-t max-lg:border-gray-600 md:p-6 lg:h-dvh lg:w-[55%] lg:px-18 lg:py-12;
   }
   .auth-blockquote {
     @apply mb-1 text-sm font-medium text-gray-400 md:mb-6 md:text-xl lg:mb-8 lg:text-2xl;

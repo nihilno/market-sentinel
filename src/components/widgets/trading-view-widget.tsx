@@ -1,8 +1,7 @@
-// components/widgets/trading-view-widget.tsx
 "use client";
 
 import useTradingViewWidget from "@/hooks/use-trading-view-widget";
-import { TradingViewWidgetProps } from "@/lib/types";
+
 import { cn } from "@/lib/utils";
 import { memo } from "react";
 
