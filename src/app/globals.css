@@ -153,7 +153,7 @@
     @apply w-full grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3;
   }
   .header {
-    @apply z-50 h-[70px] w-full bg-gray-800;
+    @apply z-50 h-[80px] w-full bg-gray-800/90;
   }
   .header-wrapper {
     @apply flex items-center justify-between px-6 py-4 text-gray-500;
