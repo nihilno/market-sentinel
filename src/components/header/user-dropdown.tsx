@@ -31,6 +31,7 @@ function UserDropdown() {
       <DropdownMenuTrigger asChild className="cursor-pointer">
         <Button
           variant="ghost"
+          size="icon-lg"
           className="flex items-center gap-3 text-gray-400 hover:text-yellow-500"
         >
           <UserAvatar username={user?.name} />
