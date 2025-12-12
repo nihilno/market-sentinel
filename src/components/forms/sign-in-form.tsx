@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
-import { signInAction } from "@/lib/actions";
+import { signInAction } from "@/lib/actions/actions";
 import { signInSchema, signInType } from "@/lib/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";

@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
-import { SignUpAction } from "@/lib/actions";
+import { SignUpAction } from "@/lib/actions/actions";
 import {
   INVESTMENT_GOALS,
   PREFERRED_INDUSTRIES,

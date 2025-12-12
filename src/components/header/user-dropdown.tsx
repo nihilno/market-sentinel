@@ -8,7 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { signOutAction } from "@/lib/actions";
+import { signOutAction } from "@/lib/actions/actions";
 import { LogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
 import NavItems from "./nav-items";

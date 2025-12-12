@@ -40,6 +40,69 @@ declare global {
     name: string;
     email: string;
   };
+
+  //   type RawNewsArticle = {
+  //     id: number;
+  //     headline?: string;
+  //     summary?: string;
+  //     source?: string;
+  //     url?: string;
+  //     datetime?: number;
+  //     image?: string;
+  //     category?: string;
+  //     related?: string;
+  //   };
+
+  //   type Alert = {
+  //     id: string;
+  //     symbol: string;
+  //     company: string;
+  //     alertName: string;
+  //     currentPrice: number;
+  //     alertType: "upper" | "lower";
+  //     threshold: number;
+  //     changePercent?: number;
+  //   };
+
+  //   type MarketNewsArticle = {
+  //     id: number;
+  //     headline: string;
+  //     summary: string;
+  //     source: string;
+  //     url: string;
+  //     datetime: number;
+  //     category: string;
+  //     related: string;
+  //     image?: string;
+  //   };
+
+  //   type WatchlistNewsProps = {
+  //     news?: MarketNewsArticle[];
+  //   };
+
+  //   type Stock = {
+  //     symbol: string;
+  //     name: string;
+  //     exchange: string;
+  //     type: string;
+  //   };
+
+  //   type StockWithWatchlistStatus = Stock & {
+  //     isInWatchlist: boolean;
+  //   };
+
+  //   type FinnhubSearchResult = {
+  //     symbol: string;
+  //     description: string;
+  //     displaySymbol?: string;
+  //     type: string;
+  //   };
+
+  //   type FinnhubSearchResponse = {
+  //     count: number;
+  //     result: FinnhubSearchResult[];
+  //   };
+  // }
 }
 
 // { value: "Growth", label: "Growth" },
@@ -111,29 +174,6 @@ declare global {
 
 //
 
-//     type Stock = {
-//         symbol: string;
-//         name: string;
-//         exchange: string;
-//         type: string;
-//     };
-
-//     type StockWithWatchlistStatus = Stock & {
-//         isInWatchlist: boolean;
-//     };
-
-//     type FinnhubSearchResult = {
-//         symbol: string;
-//         description: string;
-//         displaySymbol?: string;
-//         type: string;
-//     };
-
-//     type FinnhubSearchResponse = {
-//         count: number;
-//         result: FinnhubSearchResult[];
-//     };
-
 //     type StockDetailsPageProps = {
 //         params: Promise<{
 //             symbol: string;
@@ -190,22 +230,6 @@ declare global {
 //         alertData: Alert[] | undefined;
 //     };
 
-//     type MarketNewsArticle = {
-//         id: number;
-//         headline: string;
-//         summary: string;
-//         source: string;
-//         url: string;
-//         datetime: number;
-//         category: string;
-//         related: string;
-//         image?: string;
-//     };
-
-//     type WatchlistNewsProps = {
-//         news?: MarketNewsArticle[];
-//     };
-
 //     type SearchCommandProps = {
 //         open?: boolean;
 //         setOpen?: (open: boolean) => void;
@@ -230,27 +254,3 @@ declare global {
 //         open: boolean;
 //         setOpen: (open: boolean) => void;
 //     };
-
-//     type RawNewsArticle = {
-//         id: number;
-//         headline?: string;
-//         summary?: string;
-//         source?: string;
-//         url?: string;
-//         datetime?: number;
-//         image?: string;
-//         category?: string;
-//         related?: string;
-//     };
-
-//     type Alert = {
-//         id: string;
-//         symbol: string;
-//         company: string;
-//         alertName: string;
-//         currentPrice: number;
-//         alertType: 'upper' | 'lower';
-//         threshold: number;
-//         changePercent?: number;
-//     };
-// }
