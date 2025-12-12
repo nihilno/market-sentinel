@@ -1,7 +1,7 @@
 "use server";
 
+import { POPULAR_STOCK_SYMBOLS } from "@/lib/consts";
 import { cache } from "react";
-import { POPULAR_STOCK_SYMBOLS } from "../consts";
 
 const FINNHUB_BASE_URL = "https://finnhub.io/api/v1";
 const NEXT_PUBLIC_FINNHUB_API_KEY = process.env.NEXT_PUBLIC_FINNHUB_API_KEY;

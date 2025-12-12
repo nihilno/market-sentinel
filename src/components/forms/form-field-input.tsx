@@ -5,9 +5,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { useFormContext } from "react-hook-form";
-import { Input } from "../ui/input";
 
 function FormFieldInput({
   name,

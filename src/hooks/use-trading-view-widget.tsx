@@ -5,7 +5,6 @@ import { useEffect, useRef } from "react";
 export default function useTradingViewWidget(
   scriptUrl: string,
   config: Record<string, unknown>,
-  height: number,
 ) {
   const containerRef = useRef<HTMLDivElement | null>(null);
 

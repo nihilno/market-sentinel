@@ -1,9 +1,9 @@
 "use server";
 
 import dbConnect from "@/database/mongoose";
+import { auth } from "@/lib/auth";
+import { inngest } from "@/lib/inngest/client";
 import { headers } from "next/headers";
-import { auth } from "../auth";
-import { inngest } from "../inngest/client";
 import { signInType, signUpType } from "../schemas";
 
 export async function SignUpAction({

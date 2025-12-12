@@ -17,7 +17,7 @@ function SignInForm() {
     resolver: zodResolver(signInSchema),
     defaultValues: {
       email: "maciej.polowy2@gmail.com",
-      password: "Guwno123",
+      password: "",
     },
   });
 

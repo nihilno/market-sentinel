@@ -70,6 +70,21 @@ declare global {
     result: FinnhubSearchResult[];
   };
 
+  type StockDetailsPageProps = {
+    params: Promise<{
+      symbol: string;
+    }>;
+  };
+
+  type WatchlistButtonProps = {
+    symbol: string;
+    company: string;
+    isInWatchlist: boolean;
+    showTrashIcon?: boolean;
+    type?: "button" | "icon";
+    onWatchlistChange?: (symbol: string, isAdded: boolean) => void;
+  };
+
   //   type RawNewsArticle = {
   //     id: number;
   //     headline?: string;
@@ -174,21 +189,6 @@ declare global {
 //     };
 
 //
-
-//     type StockDetailsPageProps = {
-//         params: Promise<{
-//             symbol: string;
-//         }>;
-//     };
-
-//     type WatchlistButtonProps = {
-//         symbol: string;
-//         company: string;
-//         isInWatchlist: boolean;
-//         showTrashIcon?: boolean;
-//         type?: 'button' | 'icon';
-//         onWatchlistChange?: (symbol: string, isAdded: boolean) => void;
-//     };
 
 //     type QuoteData = {
 //         c?: number;

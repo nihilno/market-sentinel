@@ -1,4 +1,4 @@
-import Logo from "../global/logo";
+import Logo from "@/components/global/logo";
 import NavItems from "./nav-items";
 import UserDropdown from "./user-dropdown";
 
