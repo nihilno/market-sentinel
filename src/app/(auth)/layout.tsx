@@ -1,7 +1,22 @@
 import Logo from "@/components/global/logo";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default async function Layout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (session?.user) {
+    redirect("/");
+  }
+
   return (
     <main className="auth-layout">
       <section className="auth-left-section">
@@ -14,9 +29,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <section className="auth-right-section">
         <div className="relative z-10 lg:mt-4 lg:mb-16">
           <blockquote className="auth-blockquote">
-            I rely on Market Sentinel every trading day. The price-change
-            summaries are fast and accurate, the watchlist is easy to manage,
-            and the alert system caught a breakout that saved me hours of manual
+            I rely on Signalist every trading day. The price-change summaries
+            are fast and accurate, the watchlist is easy to manage, and the
+            alert system caught a breakout that saved me hours of manual
             monitoring.
           </blockquote>
           <div className="flex justify-between">

@@ -2,10 +2,13 @@
 
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
+import { signInAction } from "@/lib/actions";
 import { signInSchema, signInType } from "@/lib/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import FormFieldInput from "./form-field-input";
 import FormSwitch from "./form-switch";
 
@@ -13,18 +16,31 @@ function SignInForm() {
   const form = useForm<signInType>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
-      email: "",
-
-      password: "",
+      email: "maciej.polowy2@gmail.com",
+      password: "Guwno123",
     },
   });
 
-  function onSubmit(formData: signInType) {
-    console.log(formData);
+  const { push } = useRouter();
+
+  async function onSubmit(formData: signInType) {
+    try {
+      const result = await signInAction(formData);
+      if (result.success) {
+        push("/");
+        toast.success("You are signed in.");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Sign in failed", {
+        description:
+          error instanceof Error ? error.message : "Failed to sign in.",
+      });
+    }
   }
 
   return (
-    <>
+    <div className="relative top-1/2 h-full -translate-y-1/2">
       <h1 className="form-title mx-auto max-w-xl">Welcome back</h1>
 
       <Form {...form}>
@@ -67,7 +83,7 @@ function SignInForm() {
         button="Sign Up"
         href="/sign-up"
       />
-    </>
+    </div>
   );
 }
 

@@ -8,39 +8,31 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { signOutAction } from "@/lib/actions";
 import { LogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { Button } from "../ui/button";
 import NavItems from "./nav-items";
 import UserAvatar from "./user-avatar";
 
-function UserDropdown() {
+function UserDropdown({ user }: { user: User }) {
   const { push } = useRouter();
 
-  function handleSignOut() {
+  async function handleSignOut() {
+    await signOutAction();
     push("/sign-in");
   }
-
-  const user = {
-    name: "Maciej",
-    email: "maciej.polowy1@gmail.com",
-  };
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="cursor-pointer">
-        <Button
-          variant="ghost"
-          size="icon-lg"
-          className="flex items-center gap-3 text-gray-400 hover:text-yellow-500"
-        >
+        <div className="flex items-center gap-3 text-gray-400 hover:text-yellow-500">
           <UserAvatar username={user?.name} />
           <div className="hidden flex-col items-start md:flex">
-            <span className="text-base font-medium text-gray-400">
+            <span className="text-base font-medium text-gray-400 capitalize">
               {user.name}
             </span>
           </div>
-        </Button>
+        </div>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent className="text-gray-400" sideOffset={10}>
@@ -48,7 +40,7 @@ function UserDropdown() {
           <div className="relative flex items-center gap-3 py-2">
             <UserAvatar username={user?.name} size="lg" />
             <div className="flex flex-col">
-              <span className="text-base font-medium text-gray-400">
+              <span className="text-base font-medium text-gray-400 capitalize">
                 {user.name}
               </span>
               <span className="text-sm text-gray-500">{user.email}</span>

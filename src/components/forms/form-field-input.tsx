@@ -34,7 +34,7 @@ function FormFieldInput({
               placeholder={placeholder}
               required
               className={cn("form-input")}
-              autoComplete="off"
+              autoComplete="new-password"
             />
           </FormControl>
           <FormMessage />

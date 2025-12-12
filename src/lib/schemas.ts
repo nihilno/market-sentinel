@@ -2,23 +2,18 @@ import z from "zod";
 const INVESTMENT_GOALS_TYPE = [
   "Growth",
   "Income",
-  "Preservation",
-  "Speculation",
+  "Balanced",
+  "Conservative",
 ] as const;
 
-const RISK_TOLERANCE_OPTIONS_TYPE = [
-  "Low",
-  "Medium",
-  "High",
-  "Speculation",
-] as const;
+const RISK_TOLERANCE_OPTIONS_TYPE = ["Low", "Medium", "High"] as const;
 
 const PREFERED_INDUSTRIES_TYPE = [
   "Technology",
   "Healthcare",
   "Finance",
   "Energy",
-  "Consumer",
+  "Consumer Goods",
 ] as const;
 
 export const signUpSchema = z.object({
@@ -28,21 +23,15 @@ export const signUpSchema = z.object({
   password: z
     .string()
     .min(8, { message: "Password must include 8 characters or more." }),
-  investmentGoals: z
-    .union([z.literal(""), z.enum(INVESTMENT_GOALS_TYPE)])
-    .refine((val) => val !== "", {
-      message: "Please select a valid investment goal.",
-    }),
-  riskTolerance: z
-    .union([z.literal(""), z.enum(RISK_TOLERANCE_OPTIONS_TYPE)])
-    .refine((val) => val !== "", {
-      message: "Please select a valid risk level.",
-    }),
-  preferredIndustry: z
-    .union([z.literal(""), z.enum(PREFERED_INDUSTRIES_TYPE)])
-    .refine((val) => val !== "", {
-      message: "Please select a valid risk level.",
-    }),
+  investmentGoals: z.enum(INVESTMENT_GOALS_TYPE, {
+    message: "Please select a valid investment goal.",
+  }),
+  riskTolerance: z.enum(RISK_TOLERANCE_OPTIONS_TYPE, {
+    message: "Please select a valid risk level.",
+  }),
+  preferredIndustry: z.enum(PREFERED_INDUSTRIES_TYPE, {
+    message: "Please select a preferred industry.",
+  }),
 });
 
 export const signInSchema = z.object({

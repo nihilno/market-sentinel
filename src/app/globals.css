@@ -134,6 +134,16 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: both-edges stable;
+  }
+
   body {
     @apply text-foreground bg-gray-900;
   }

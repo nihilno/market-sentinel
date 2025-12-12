@@ -28,6 +28,18 @@ declare global {
     label: string;
     placeholder?: string;
   };
+
+  type WelcomeEmailData = {
+    email: string;
+    name: string;
+    intro: string;
+  };
+
+  type User = {
+    id: string;
+    name: string;
+    email: string;
+  };
 }
 
 // { value: "Growth", label: "Growth" },
@@ -97,17 +109,7 @@ declare global {
 //         initialStocks: StockWithWatchlistStatus[];
 //     };
 
-//     type WelcomeEmailData = {
-//         email: string;
-//         name: string;
-//         intro: string;
-//     };
-
-//     type User = {
-//         id: string;
-//         name: string;
-//         email: string;
-//     };
+//
 
 //     type Stock = {
 //         symbol: string;

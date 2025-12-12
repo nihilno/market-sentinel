@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
+import { SignUpAction } from "@/lib/actions";
 import {
   INVESTMENT_GOALS,
   PREFERRED_INDUSTRIES,
@@ -10,7 +11,9 @@ import {
 import { signUpSchema, signUpType } from "@/lib/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import FormFieldCountry from "./form-field-country";
 import FormFieldInput from "./form-field-input";
 import FormFieldSelect from "./form-field-select";
@@ -24,14 +27,31 @@ function SignUpForm() {
       email: "",
       country: "PL",
       password: "",
-      investmentGoals: "",
-      riskTolerance: "",
-      preferredIndustry: "",
+      investmentGoals: "Growth",
+      riskTolerance: "Low",
+      preferredIndustry: "Technology",
     },
+    mode: "onBlur",
   });
 
-  function onSubmit(formData: signUpType) {
-    console.log(formData);
+  const { replace } = useRouter();
+
+  async function onSubmit(formData: signUpType) {
+    try {
+      const result = await SignUpAction(formData);
+      if (result.success) {
+        replace("/");
+      }
+      toast.success("Account was successfully created.");
+    } catch (error) {
+      console.error(error);
+      toast.error("Sign up failed.", {
+        description:
+          error instanceof Error
+            ? error.message
+            : "Failed to create an account.",
+      });
+    }
   }
 
   return (
