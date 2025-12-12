@@ -41,6 +41,35 @@ declare global {
     email: string;
   };
 
+  type Stock = {
+    symbol: string;
+    name: string;
+    exchange: string;
+    type: string;
+  };
+
+  type StockWithWatchlistStatus = Stock & {
+    isInWatchlist: boolean;
+  };
+
+  type SearchCommandProps = {
+    renderAs?: "button" | "text";
+    label?: string;
+    initialStocks: StockWithWatchlistStatus[];
+  };
+
+  type FinnhubSearchResult = {
+    symbol: string;
+    description: string;
+    displaySymbol?: string;
+    type: string;
+  };
+
+  type FinnhubSearchResponse = {
+    count: number;
+    result: FinnhubSearchResult[];
+  };
+
   //   type RawNewsArticle = {
   //     id: number;
   //     headline?: string;
@@ -80,28 +109,6 @@ declare global {
   //     news?: MarketNewsArticle[];
   //   };
 
-  //   type Stock = {
-  //     symbol: string;
-  //     name: string;
-  //     exchange: string;
-  //     type: string;
-  //   };
-
-  //   type StockWithWatchlistStatus = Stock & {
-  //     isInWatchlist: boolean;
-  //   };
-
-  //   type FinnhubSearchResult = {
-  //     symbol: string;
-  //     description: string;
-  //     displaySymbol?: string;
-  //     type: string;
-  //   };
-
-  //   type FinnhubSearchResponse = {
-  //     count: number;
-  //     result: FinnhubSearchResult[];
-  //   };
   // }
 }
 
@@ -164,12 +171,6 @@ declare global {
 //         text: string;
 //         linkText: string;
 //         href: string;
-//     };
-
-//     type SearchCommandProps = {
-//         renderAs?: 'button' | 'text';
-//         label?: string;
-//         initialStocks: StockWithWatchlistStatus[];
 //     };
 
 //
